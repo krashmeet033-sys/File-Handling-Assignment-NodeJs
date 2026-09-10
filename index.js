@@ -9,7 +9,7 @@ const studentData = `Name: Rashmeet Kaur
 Course: Full Stack Development
 Technology: Node.js`;
 
-
+// Task 1 
 fs.writeFile(originalFile, studentData, (err) => {
     if (err) {
         console.log('Error creating file:', err);
@@ -18,7 +18,7 @@ fs.writeFile(originalFile, studentData, (err) => {
 
     console.log('File created successfully');
 
-   
+// Task 2 
     fs.readFile(originalFile, 'utf8', (err, data) => {
         if (err) {
             console.log('Error reading file:', err);
@@ -27,7 +27,7 @@ fs.writeFile(originalFile, studentData, (err) => {
 
         console.log('\nStudent Information:');
         console.log(data);
-
+// Task 3
         const additionalData = `\nExperience: 1 Year
 City: Kolkata`;
 
@@ -39,7 +39,7 @@ City: Kolkata`;
 
             console.log('\nData updated successfully');
 
-           
+// Task 4
             fs.rename(originalFile, renamedFile, (err) => {
                 if (err) {
                     console.log('Error renaming file:', err);
@@ -48,7 +48,7 @@ City: Kolkata`;
 
                 console.log('File renamed successfully');
 
-                
+// Task 5
                 fs.unlink(renamedFile, (err) => {
                     if (err) {
                         console.log('Error deleting file:', err);
