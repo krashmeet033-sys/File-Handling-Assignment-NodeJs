@@ -1,58 +1,61 @@
-const fs = require("fs");
+const fs = require('fs');
 
-// Task 1: Create Student Information File
+
+const originalFile = 'student.txt';
+const renamedFile = 'studentDetails.txt';
+
+
 const studentData = `Name: Rashmeet Kaur
 Course: Full Stack Development
 Technology: Node.js`;
 
-fs.writeFile("student.txt", studentData, (err) => {
+
+fs.writeFile(originalFile, studentData, (err) => {
     if (err) {
-        console.log("Error creating file:", err);
+        console.log('Error creating file:', err);
         return;
     }
 
-    console.log("File created successfully");
+    console.log('File created successfully');
 
-    // Task 2: Read Student Information
-    fs.readFile("student.txt", "utf8", (err, data) => {
+   
+    fs.readFile(originalFile, 'utf8', (err, data) => {
         if (err) {
-            console.log("Error reading file:", err);
+            console.log('Error reading file:', err);
             return;
         }
 
-        console.log("\nStudent Information:");
+        console.log('\nStudent Information:');
         console.log(data);
 
-        // Task 3: Update Student Information
-        const additionalData = `
-Experience: 1 Year
+        const additionalData = `\nExperience: 1 Year
 City: Kolkata`;
 
-        fs.appendFile("student.txt", additionalData, (err) => {
+        fs.appendFile(originalFile, additionalData, (err) => {
             if (err) {
-                console.log("Error updating file:", err);
+                console.log('Error updating file:', err);
                 return;
             }
 
-            console.log("\nData updated successfully");
+            console.log('\nData updated successfully');
 
-            // Task 4: Rename Student File
-            fs.rename("student.txt", "studentDetails.txt", (err) => {
+           
+            fs.rename(originalFile, renamedFile, (err) => {
                 if (err) {
-                    console.log("Error renaming file:", err);
+                    console.log('Error renaming file:', err);
                     return;
                 }
 
-                console.log("File renamed successfully");
+                console.log('File renamed successfully');
 
-                // Task 5: Remove File
-                fs.unlink("studentDetails.txt", (err) => {
+                
+                fs.unlink(renamedFile, (err) => {
                     if (err) {
-                        console.log("Error deleting file:", err);
+                        console.log('Error deleting file:', err);
                         return;
                     }
 
-                    console.log("File deleted successfully");
+                    console.log('File deleted successfully');
                 });
             });
         });
