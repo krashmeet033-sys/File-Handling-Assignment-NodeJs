@@ -1,13 +1,13 @@
 {
-  "name": "file-handling-assignment",
+  "name": "nodejs-file-handling-assignment",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js File Handling Assignment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rashmeet Kaur",
   "license": "ISC",
   "type": "commonjs"
 }
